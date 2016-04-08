@@ -1,0 +1,25 @@
+<h1>Hi</h1>
+<% if @products.empty? %>
+    <h2> Product list is empty</h2>
+
+<% else %>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Cost Price</th>
+        <th>Min Value</th>
+        <th>Type</th>
+       </tr>
+
+      <% @products.each do |product| %>
+      <tr>
+        <th><%= product.id%></th>
+        <th><%= product.name%></th>
+        <th><%= product.cost_price%></th>
+        <th><%= product.min_value%></th>
+        <th><%= product.product_type%></th>
+      </tr>
+    <%end%>
+    </table>
+<% end %>
