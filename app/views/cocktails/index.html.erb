@@ -1,0 +1,27 @@
+<h1> HI </h1>
+<% if @cocktails.empty %>
+    <h2> Cocktails list is emtpy</h2>
+<%else%>
+    <table>
+            <tr>
+            <th> Id </th>
+            <th> Product Name </th>
+            <th> Value </th>
+            <th> Price </th>
+            <th> Edit </th>
+            <th> Remove </th>
+           </tr>
+        <% @cocktail.each do |cocktail|  %>
+           <tr>
+               <td><%= cocktail.id %> </td>
+               <td><%= cocktail.name %> </td>
+             <td><%= cocktail.value %> </td>
+             <td><%= cocktail.price %> </td>
+             <td><%= link_to 'edit', edit_product_path(cocktail) %> </td>
+             <td><%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: {confirm:'Are you sure?'} %>
+             </td>
+        </tr>
+        <%end%>
+
+        </table>
+<%end %>

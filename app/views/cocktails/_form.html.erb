@@ -1,0 +1,13 @@
+<p> <%= f.label :name %> <br>
+  <%= f.text_field :name %> </p>
+  <%= f.label :ingredients %>
+  <%= f.label :name %>
+  <hr>
+<%= f.field_for :ingredients do | ingredient_form| %>
+    <p>
+  <%=  ingredient_form.label :value %>
+      <%=  ingredient_form.number_field (:value) %>
+      <%=  ingredient_form.label :product %>
+      <%=  ingredient_form.collection_select(:product_id, Product.all, :id, :name, :prompt=> true) %>
+</p>
+<%end%>

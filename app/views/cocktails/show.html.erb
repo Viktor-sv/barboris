@@ -1,7 +1,12 @@
 <ui>
-  <li><%= "ID: #{@product.id}"%> </li>
-  <li><%= "Name: #{@product.name}"%> </li>
-  <li><%= "Min value: #{@product.min_value}"%> </li>
-  <li><%= "Cost price: #{@product.cost_price}"%> </li>
-  <li><%= "Type: #{@product.product_type}"%> </li>
-</ui>
+  <li><%= "ID: #{@cocktail.id}"%> </li>
+  <li><%= "Name: #{@cocktail.name}"%> </li>
+  <li><%= "Min value: #{@cocktail.min_value}"%> </li>
+  </ui>
+<p>Ingredients</p>
+<hr>
+<ul>
+        <% @cocktail.ingredients.each do |ingredient| %>
+    <li> <%= "#{ingredient.product.name} #{ingredient.value}" %></li>
+    <%end%>
+    </ul>

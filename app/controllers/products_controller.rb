@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create item_parms
-    redirect_to axction:'index'
+    redirect_to action:'index'
   end
 
   def item_parms
