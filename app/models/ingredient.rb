@@ -4,7 +4,8 @@ class Ingredient < ActiveRecord::Base
 
 
   def price
-    (value/product.min_value)*product.price
+
+    product.nil? ? 0: (value/product.min_value)*product.price
 
   end
 end

@@ -3,7 +3,7 @@
   <%= f.label :ingredients %>
   <%= f.label :name %>
   <hr>
-<%= f.field_for :ingredients do | ingredient_form| %>
+<%= f.fields_for :ingredients do | ingredient_form| %>
     <p>
   <%=  ingredient_form.label :value %>
       <%=  ingredient_form.number_field (:value) %>

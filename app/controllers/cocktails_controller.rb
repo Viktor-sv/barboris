@@ -7,6 +7,7 @@ class CocktailsController < ApplicationController
   def  new
     @cocktail = Cocktail.new
    # INGREDIENT_MAX_COUNT.times{@cocktail.ingredients.build}
+    prepare_ingredient_item
   end
 
   def index
@@ -15,21 +16,45 @@ class CocktailsController < ApplicationController
 
 
   def item_params
-    params.require(:cocktail).permit (:id,:name, ingredients_attributes:[:id,:value,:product_id, :cocktail_id])
+    params.require(:cocktail).permit(:id,:name, ingredients_attributes: [:id, :value, :product_id, :cocktail_id])
 
   end
 
   def edit
+    prepare_ingredient_item
    # i_count = INGREDIENT_MAX_COUNT -@cocktail.ingredients.size
    # i_count.times{@cocktail.ingredients.build}
   end
 
-  private
+  def create
+    @cocktail = Cocktail.create item_params
+    if @cocktail.errors.empty?
+      flash[:succes] = "Cocktail \'#{@cocktail.name.humanize}\' was created succesfully"
+      redirect_to @cocktail
+    else
+      flash[:warning] = @cocktail.errors.full_messages.to_sentence
+      prepare_ingredient_item
+      render :new
+     end
 
+  end
+
+  def update
+    @cocktail.update_attributes item_params
+    if @cocktail.error.empty?
+
+      flash[:succes] = "Cocktail \'#{@cocktail.name.humanize}\' was updated succesfully"
+      redirect_to action: :index
+    else
+      flash[:warning] = @cocktail.errors.full_messages.to_sentence
+    render :edit
+    end
+  end
+
+
+  private
   def prepare_ingredient_item
-        (INGREDIENT_MAX_COUNT-@cocktail.ingredients.size).time{
-          @cocktail.ingredients.build
-        }
+        (INGREDIENT_MAX_COUNT-@cocktail.ingredients.size).times{        @cocktail.ingredients.build }
   end
 
   def find_item

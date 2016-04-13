@@ -4,7 +4,7 @@ class Cocktail < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients
 
   def value
-    ingredients.joins(:product).where ('products.product_type = ?' 'drink').sum(:value)
+    ingredients.joins(:product).where('products.product_type = ?', 'drink').sum(:value)
   end
 
   def price
