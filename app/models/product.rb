@@ -8,11 +8,11 @@ has_many :ingredients
 @@tax = 0.04
 @@markup_percent = 0.5
 
- def cost_price
-   cost_price + mark + + (markup * @@tax)
+ def price
+   cost_price + markup +  +(markup * @@tax)
  end
 
-   def murkup
+   def markup
     cost_price * @@markup_percent
    end
 
