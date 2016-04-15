@@ -1,10 +1,11 @@
-<p> <%= f.label :name %> <br>
-  <%= f.text_field :name %> </p>
+<p> <%= f.label :name %>
+  <%= f.text_field :name %>
   <%= f.label :ingredients %>
   <%= f.label :name %>
+</p>
   <hr>
 <%= f.fields_for :ingredients do | ingredient_form| %>
-    <p>
+<p>
   <%=  ingredient_form.label :value %>
       <%=  ingredient_form.number_field (:value) %>
       <%=  ingredient_form.label :product %>
