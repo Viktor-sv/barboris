@@ -42,7 +42,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.all
+  #  @products = Product.all
+
+    #redirect_to action: 'index'
   end
 
 

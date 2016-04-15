@@ -1,10 +1,15 @@
 class Product < ActiveRecord::Base
 
-validates :name, :cost_price, :min_value, :product_type, presence: true
-
+validates :cost_price, :min_value, :product_type, presence: true
+validates :name, presence: true, allow_blank: false
 validates :cost_price ,:min_value, numericality: {:greater_then => 0}
 
 has_many :ingredients
+has_many :cocktail, through: :ingredients
+
+before_save{self.name = name.titleize}
+
+
 @@tax = 0.04
 @@markup_percent = 0.5
 

@@ -51,6 +51,15 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail.destroy
+    redirect_to action:  'index'
+  end
+
+  def show
+    #@cocktails = Cocktail.all
+  #  redirect_to action:  'index'
+  end
 
   private
   def prepare_ingredient_item

@@ -13,11 +13,14 @@ class Cocktail < ActiveRecord::Base
 
 
   def value
-    ingredients.joins(:product).where('products.product_type = ?', 'drink').sum(:value)
+    #ingredients.joins(:product).where('products.product_type = ?', 'drink').sum(:value)
+    ingredients.inject(0) { |sum, ingredient| sum + (ingredient.product.product_type == 'drink' ? ingredient.value : 0 )
+    }
   end
 
   def price
-    ingredients.all.inject(0){|price,ingredient| price + ingredient.price}
+    #ingredients.all.inject(0){|price,ingredient| price + ingredient.price}
+    ingredients.inject(0) { |price, ingredient| price + (ingredient.value / ingredient.product.min_value)*ingredient.price}.ceil
   end
 
 end
