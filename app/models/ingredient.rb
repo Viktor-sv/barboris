@@ -15,6 +15,7 @@ class Ingredient < ActiveRecord::Base
 
 
 
+
   def validate_value
     puts "validates"
 
@@ -29,3 +30,4 @@ class Ingredient < ActiveRecord::Base
 
   end
 end
+

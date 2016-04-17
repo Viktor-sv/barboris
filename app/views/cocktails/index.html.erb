@@ -5,7 +5,6 @@
     <table>
             <tr>
             <th> Id </th>
-            <th> Product Name </th>
             <th> Value </th>
             <th> Price </th>
             <th> Edit </th>
@@ -18,9 +17,8 @@
              <td><%= cocktail.value %> </td>
              <td><%= cocktail.price %> </td>
              <td><%= link_to 'edit', edit_product_path(cocktail) %> </td>
-             <td><%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: {confirm:'Are you sure?'} %>
-             </td>
-        </tr>
+             <td><%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: {confirm:'Are you sure?'} %></td>
+            </tr>
         <%end%>
 
         </table>

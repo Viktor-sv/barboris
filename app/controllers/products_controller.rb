@@ -32,8 +32,9 @@ class ProductsController < ApplicationController
 
   def update
    # @product = Product.where(id: params[:id]).first
-    @product.update_atribute item_parms
-    if @product.error.empty?
+    @product.update_attributes item_parms
+
+    if @product.errors.empty?
       redirect_to action: 'index'
     else
       render 'edit'
