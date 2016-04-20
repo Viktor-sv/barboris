@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2121795239">
-    <data-source source="LOCAL" name="development" uuid="f4543c6d-5e6a-4a62-8401-118a6d494b67">
+  <component name="DataSourceManagerImpl" format="xml" hash="1594723548">
+    <data-source source="LOCAL" name="Rails bar: development" uuid="5313e2d5-cdd3-4f4c-abc7-321a55159a8f">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
