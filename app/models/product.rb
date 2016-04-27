@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  mount_uploader :image, ProductImageUploader
 
 validates :cost_price, :min_value, :product_type, presence: true
 validates :name, presence: true, allow_blank: false

@@ -16,7 +16,7 @@ class CocktailsController < ApplicationController
 
 
   def item_params
-    params.require(:cocktail).permit(:id,:name, ingredients_attributes: [:id, :value, :product_id, :cocktail_id])
+    params.require(:cocktail).permit(:id,:name, ingredients_attributes: [:id, :value, :product_id, :cocktail_id, :image])
 
   end
 

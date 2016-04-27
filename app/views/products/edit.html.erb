@@ -1,4 +1,6 @@
 <%= form_for @product do |f| %>
+
+    <%=  render partial: '/layouts/partials/header', locals:{f: f} %>
     <%=  render partial: 'form', locals:{f: f} %>
 
     <br>
