@@ -1,9 +1,10 @@
-<p> <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :ingredients %>
-  <%= f.label :name %>
-</p>
-  <hr>
+<div class="media-body panel-default">
+  <p> <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :ingredients %>
+    <%= f.label :name %>
+  </p>
+    <hr>
 <%= f.fields_for :ingredients do | ingredient_form| %>
 <p>
   <%=  ingredient_form.label :value %>
@@ -12,3 +13,5 @@
       <%=  ingredient_form.collection_select(:product_id, Product.all, :id, :name, :prompt=> true) %>
 </p>
 <%end%>
+
+  </div>

@@ -27,8 +27,8 @@ class Cocktail < ActiveRecord::Base
 
   def validate_noduplicate_ingredients
     original_ingred_array = ingredients.to_a
-    uniq_ingred_array = ingredients_array.uniq {|ingredient| ingredient.product.id}
-    errors.add(:id, "Remove duplicate ingredints") if (original_ingred_array-uniq_ingred_array).any&
+    uniq_ingred_array = original_ingred_array.uniq {|ingredient| ingredient.product.id}
+    errors.add(:id, "Remove duplicate ingredints") if (original_ingred_array-uniq_ingred_array).any?
 
 
   end
