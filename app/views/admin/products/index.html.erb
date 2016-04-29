@@ -19,14 +19,14 @@
         <th><%= product.id%></th>
         <th><%= product.name%></th>
 
-        <th><%=  link_to  product.name.to_s, product_path(product), method: :show %></th>
+        <th><%= link_to product.name, admin_product_path(product) %></th>
         <th><%= product.cost_price%></th>
         <th><%= product.min_value%></th>
         <th><%= product.product_type%></th>
 
 
-        <td><%= link_to 'edit', edit_product_path(product)  %></td>
-        <td><%= link_to 'remove', product_path(product),method: :delete, data: { :confirm=> 'Are you sure?'} %> </td>
+        <td><%= link_to 'edit', edit_admin_product_path(product)  %></td>
+        <td><%= link_to 'remove', admin_product_path(product), data: { :confirm=> 'Are you sure?'} %> </td>
           </tr>
     <%end%>
     </table>

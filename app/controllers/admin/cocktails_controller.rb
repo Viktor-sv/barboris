@@ -1,4 +1,4 @@
-class CocktailsController < ApplicationController
+class Admin::CocktailsController < ApplicationController
   before_filter :find_item, only: [:edit, :update,:destroy,:show,]
   after_filter :prepare_ingredient_item , only: [:new, :edit]
 

@@ -1,4 +1,4 @@
-<%= form_for @cocktail do |f| %>
+<%= form_for [:admin,@cocktail] do |f| %>
      <%=  render partial: 'form', locals:{f: f} %>
 
     <br>

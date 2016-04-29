@@ -11,9 +11,8 @@
 <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
-
+<th><%= link_to 'sign out',  destroy_admin_session method: :delete %></th>
 <%= yield %>
 
 </body>
 </html>
-
