@@ -1,24 +1,16 @@
 class WelcomeController < ApplicationController
 
   def index
-
+    @cocktails = Cocktail.includes(:ingredients,:products)
   end
 
   def show
-    #@cocktails = Cocktail.all
-      redirect_to action:  'index'
-
+    @cocktails = Cocktail.includes(:ingredients,:products)
   end
 
   def search_by_product (product)
-         #@cocktails = Cocktail.includes(:ingredients,:products).includes()
-    @cocktails = Cocktail.all.pick(product)
 
-    @cocktails.each do |cocktail|
-      puts "gehh"
-      putd cocktail.name.to_s
-
-    end
+    @cocktails = Cocktail.joins(:products).where(ingreients: {product_id: params[:id]}).district
 
     end
 

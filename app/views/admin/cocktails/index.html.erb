@@ -1,14 +1,14 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <h1>Cocktail bar!</h1>
-    <%= render partial: 'admin/cocktails/carousel', locals:{f: @cocktails} %>
+    <%#= render partial: 'admin/cocktails/carousel', locals:{f: @cocktails} %>
 </div>
 
 <div class="container">
   <div class="row">
-    <% @cocktails.each do |cocktail|  %>
-        <%=  render partial: 'admin/cocktails/item', locals:{f: cocktail} %>
-    <%end%>
+    <%# @cocktails.each do |cocktail|  %>
+        <%#=  render partial: 'admin/cocktails/item', locals:{f: cocktail} %>
+    <%#end%>
   </div>
   <hr>
   <footer>

@@ -4,13 +4,15 @@
 </div>
 
 <div class="container">
+
   <div class="row">
-    <%# @cocktails.each do |cocktail|  %>
-        <%=  render partial: 'welcome/item'%>
-    <%#end%>
+    <% @cocktails.each do |cocktail|  %>
+        <%=  render partial: 'welcome/item', locals:{f: cocktail} %>
+    <%end%>
   </div>
   <hr>
+
   <footer>
     <p>&copy; 2016 BigCompany, Chern.</p>
   </footer>
-</div> <!-- /container -->
+</div>

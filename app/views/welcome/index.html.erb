@@ -1,19 +1,19 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-    <h1>Cocktail bar!</h1>
-    <%= render partial: 'welcome/carousel' %>
+  <h1>Cocktail bar!</h1>
+  <%= render partial: 'welcome/carousel', locals:{f: @cocktails} %>
 </div>
 
 <div class="container">
+
   <div class="row">
-
-        <%=  render partial: 'welcome/item' %>
-
+    <% @cocktails.each do |cocktail|  %>
+        <%=  render partial: 'welcome/item', locals:{f: cocktail} %>
+    <%end%>
   </div>
   <hr>
+
   <footer>
     <p>&copy; 2016 BigCompany, Chern.</p>
   </footer>
-</div> <!-- /container -->
-
+</div>
 
