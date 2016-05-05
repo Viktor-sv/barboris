@@ -1,32 +1,16 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-  <!--div class="container"-->
     <h1>Cocktail bar!</h1>
-    <!--p>This is a bast cocktail bar then you have ever saw.</p-->
-    <!-- ><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p -->
-     <%= render 'admin/cocktails/carousel' %>
-  <!--/div-->
+    <%= render partial: 'admin/cocktails/carousel', locals:{f: @cocktails} %>
 </div>
 
 <div class="container">
-  <!-- Example row of columns -->
-
-
   <div class="row">
-    <!-- div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Test</p>
-      <!--p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p -->
-    <!--/div -->
-
     <% @cocktails.each do |cocktail|  %>
         <%=  render partial: 'admin/cocktails/item', locals:{f: cocktail} %>
     <%end%>
-
   </div>
-
   <hr>
-
   <footer>
     <p>&copy; 2016 BigCompany, Chern.</p>
   </footer>
