@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bar</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Barot</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -12,6 +12,8 @@
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
 
+
+<%= render 'layouts/partials/navbar' %>
 <%= yield %>
 
 </body>

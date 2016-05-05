@@ -1,4 +1,5 @@
 class Cocktail < ActiveRecord::Base
+  mount_uploader :image, CocktailImageUploader
 
   has_many :ingredients
   has_many :products, through: :ingredients

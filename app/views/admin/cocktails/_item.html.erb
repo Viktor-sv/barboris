@@ -1,0 +1,56 @@
+<div class="col-md-4">
+  <h2><%= f.name %></h2>
+  <p><%= f.description %></p>
+  <p>
+
+    <% if @cocktails.empty? %>
+      <h2> Cocktails list is emtpy</h2>
+  <%else%>
+      <table>
+        <tr>
+          <th> Id </th>
+          <th> Value </th>
+          <th> Price </th>
+          <th> Edit </th>
+          <th> Remove </th>
+        </tr>
+
+        <% if f.image? %>
+            <div class='field form-group' >
+              <div class='col-md-2 control-label' > </div>
+              <div class='col-sm-5' >
+                <!-- %= f.check_box :remove_image  %> Remove image -->
+              </div>
+            </div>
+            <div class="field form-group">
+              <div class="col-sm-2 control-label"> </div>
+              <div class='col-sm-10' >
+                <%= image_tag(f.image_url, size: '380', class: 'img_thumbnail') if f.image? %>
+              </div>
+            </div>
+            <%else %>
+            <h2> NO IMAGE</h2>
+        <%end%>
+
+        <td><%= f.id %> </td>
+              <td><%= f.id %> </td>
+              <td><%= f.name %> </td>
+              <td><%= f.value %> </td>
+              <td><%= f.price %> </td>
+
+              <td><%= link_to 'edit', edit_admin_cocktail_path(f) %> </td>
+              <td><%= link_to 'remove', admin_cocktail_path(f), method: :delete, data: {confirm:'Are you sure?'} %></td>
+
+            </tr>
+
+
+      </table>
+  <%end %>
+
+
+
+
+
+
+  </p>
+</div>

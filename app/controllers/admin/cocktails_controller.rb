@@ -16,7 +16,7 @@ class Admin::CocktailsController < ApplicationController
 
 
   def item_params
-    params.require(:cocktail).permit(:id,:name, ingredients_attributes: [:id, :value, :product_id, :cocktail_id, :image])
+    params.require(:cocktail).permit(:id,:name,:image, ingredients_attributes: [:id, :value, :product_id, :cocktail_id])
 
   end
 
@@ -41,7 +41,8 @@ class Admin::CocktailsController < ApplicationController
 
   def update
     @cocktail.update_attributes item_params
-    if @cocktail.error.empty?
+    if @cocktail.errors.empty?
+
 
       flash[:succes] = "Cocktail \'#{@cocktail.name.humanize}\' was updated succesfully"
       redirect_to action: :index

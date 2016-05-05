@@ -1,25 +1,35 @@
-<h1> HI </h1>
-<% if @cocktails.empty? %>
-    <h2> Cocktails list is emtpy</h2>
-<%else%>
-    <table>
-            <tr>
-            <th> Id </th>
-            <th> Value </th>
-            <th> Price </th>
-            <th> Edit </th>
-            <th> Remove </th>
-           </tr>
-        <% @cocktails.each do |cocktail|  %>
-           <tr>
-               <td><%= cocktail.id %> </td>
-               <td><%= cocktail.name %> </td>
-             <td><%= cocktail.value %> </td>
-             <td><%= cocktail.price %> </td>
-             <td><%= link_to 'edit', edit_cocktail_path(cocktail) %> </td>
-             <td><%= link_to 'remove', cocktail_path(cocktail), method: :delete, data: {confirm:'Are you sure?'} %></td>
-            </tr>
-        <%end%>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <!--div class="container"-->
+    <h1>Cocktail bar!</h1>
+    <!--p>This is a bast cocktail bar then you have ever saw.</p-->
+    <!-- ><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p -->
+     <%= render 'admin/cocktails/carousel' %>
+  <!--/div-->
+</div>
 
-        </table>
-<%end %>
+<div class="container">
+  <!-- Example row of columns -->
+
+
+  <div class="row">
+    <!-- div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Test</p>
+      <!--p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p -->
+    <!--/div -->
+
+    <% @cocktails.each do |cocktail|  %>
+        <%=  render partial: 'admin/cocktails/item', locals:{f: cocktail} %>
+    <%end%>
+
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2016 BigCompany, Chern.</p>
+  </footer>
+</div> <!-- /container -->
+
+
