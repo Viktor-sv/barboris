@@ -1,17 +1,40 @@
 <div class="media-body panel-default">
-  <p> <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :ingredients %>
+
+  <div class="panel-body col-md-6">
+    <p>
     <%= f.label :name %>
+     <%= form_field_text(f,:name) %>
+    <%= f.label :ingredients %>
+
   </p>
+
+
     <hr>
 <%= f.fields_for :ingredients do | ingredient_form| %>
 <p>
-  <%=  ingredient_form.label :value %>
+      <%=  ingredient_form.label :value %>
       <%=  ingredient_form.number_field (:value) %>
       <%=  ingredient_form.label :product %>
       <%=  ingredient_form.collection_select(:product_id, Product.all, :id, :name, :prompt=> true) %>
 </p>
 <%end%>
 
+    <div class='col-sm-10' >
+      <%= image_tag(@cocktail.image_url, size: '380', class: 'img_thumbnail') if @cocktail.image? %>
+    </div>
+      <div class='col-sm-3'>
+      <%= f.file_field :image, multiple: false %>
+    </div>
+    <div class="actions form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%=f.submit "Save"%>
+      </div>
+    </div>
+
+
   </div>
+
+  </div>
+
+
+
