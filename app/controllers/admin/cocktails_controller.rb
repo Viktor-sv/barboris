@@ -11,7 +11,7 @@ class Admin::CocktailsController < ApplicationController
   end
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.includes(:ingredients,:products)
   end
 
 

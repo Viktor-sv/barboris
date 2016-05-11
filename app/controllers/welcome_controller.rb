@@ -1,9 +1,9 @@
-class Admin::WelcomeController < ApplicationController
+class WelcomeController < ApplicationController
 
 
 
-  def show
-    @admin = current_admin
+  def index
+
   end
 
 

@@ -39,14 +39,17 @@
             <%else %>
             <h2> NO IMAGE :(</h2>
         <%end%>
-
+       <% %>
+      <% f.products.each do |product| %>
        <div class='col-sm-10'>
+         <% product.name %>
            <a href="<%=edit_admin_cocktail_path(f) %>" class="btn btn-info" role="button"> Edit </a>
-        </div>
+       </div>
+      <%end%>
           <br>
-        <div class='col-sm-10'>
-          <a href="<%=admin_cocktail_path(f) %>" class="btn btn-info" role="button">Remove</a>
-        </div>
+        <!--div class='col-sm-10'>
+          < a href="<%= link_to 'remove', admin_cocktail_path(f) %>" class="btn btn-info" role="button">Remove</a>
+        </div-->
 
       </table>
   <%end %>
