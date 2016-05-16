@@ -1,0 +1,21 @@
+<div class="row" id="<%= "edit-#{product.id}" %>">
+  <%= form_for product, url: admin_ajax_product_path(product), method: :put, remote: true do |f|  %>
+
+
+   <div class="col-xs-10">
+    <%= render partial:  'form', locals: {product: product, f: f} %>
+   </div>
+
+   <div class="col-xs-2">
+   <%=button_tag(:class => "btn bnt-default") do %>
+         <span class="gliphicon gliphicon-pensil"  aria-hiden="true"> </span>
+
+     <%end%>
+     <%= link_to admin_ajax_prduct_path(product), remove: true , class: "btn bnt-default" do %>
+         <span class="gliphicon gliphicon-pensil"  aria-hiden="true"> </span>
+     <%end%>
+   </div>
+
+  </div>
+
+<%end%>
