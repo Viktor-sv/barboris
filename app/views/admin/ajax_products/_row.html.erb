@@ -5,12 +5,12 @@
     <div class=" col-md-2 verl-align"> <%=product.product_type%></div>
     <div class="col-xs-2">
 
-     <%= link_to admin_ajax_product_path(product), remove: true , class: "btn bnt-default" do %>
-     <span class="glyphicon glyphicon-paperclip" aria-hiden="true"> </span>
+     <%= link_to edit_admin_ajax_product_path(product), remote: true , class: "btn bnt-default" do %>
+     <span class="glyphicon glyphicon-pencil" aria-hiden="true"> </span>
      <%end%>
 
-     <%= link_to admin_ajax_product_path(product), method: :delete, remove: true , class: "btn bnt-default" do %>
-     <span class="glyphicon glyphicon-paperclip"  aria-hidden="true"></span>
+     <%= link_to admin_ajax_product_path(product), method: :delete, remote: true , class: "btn bnt-default" do %>
+     <span class="glyphicon glyphicon-remove"  aria-hidden="true"></span>
 
       <%end%>
     </div>

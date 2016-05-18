@@ -1,4 +1,7 @@
-<div id="<%=product.id %>" data-id="<%= product.id %>">
+<div id="<%= product.id %>" data-id="<%= product.id %>">
+
+
+  <%= render partial: 'create', locals: {product: product} %>
 
   <%if mode == :show %>
     <%= render partial: 'row', locals: {product: product} %>
