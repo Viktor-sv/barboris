@@ -31,7 +31,7 @@
         <p>
        <% f.products.each do |product| %>
             <div class="btn btn-info col-sm-3" role="button" >
-                <%= link_to product.name, welcome_path(product) %>
+               <%= link_to product.name, welcome_path(product) %>
             </div >
         <%end%>
         </p>

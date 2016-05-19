@@ -1,0 +1,17 @@
+<div id="product">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">Product</div>
+    <div class="col-md-1">Min Value</div>
+    <div class="col-md-1"> Cost price</div>
+    <div class="col-md-1"> Type</div>
+  </div>
+<HR>
+
+
+  <%@products.each do |product| %>
+
+      <%=render partial: 'product', locals:{product: product, mode: :show } %>
+  <%end%>
+
+</div>
