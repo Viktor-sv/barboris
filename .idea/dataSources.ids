@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Rails bar: development" uuid="5313e2d5-cdd3-4f4c-abc7-321a55159a8f">
-    <database-info product="SQLite" version="3.8.10.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+  <data-source name="development" uuid="35af7dc5-8928-4189-bd2f-49776f5756b4">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
     <table name="admins" schema="" catalog="" type="TABLE">
@@ -31,6 +31,7 @@
       <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="image" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="visible" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12" def="J3Nob3cn"/>
       <primary-key columns="id"/>
     </table>
     <table name="ingredients" schema="" catalog="" type="TABLE">

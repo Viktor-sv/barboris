@@ -1,0 +1,2 @@
+var row = $( "<%= "##{@cocktail.id}" %>" );
+row.html("<%= escape_javascript(render partial: 'row', locals: { cocktail: @cocktail ,mode: @cocktail.visible } ) %>");

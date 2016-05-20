@@ -1,18 +1,33 @@
-<div class="row" id="<%= "show-#{product.id}" %>">
-    <div class=" col-md-4 verl-align"> <%=product.name%></div>
-    <div class=" col-md-2 verl-align"> <%=product.min_value%></div>
-    <div class=" col-md-2 verl-align"> <%=product.cost_price%></div>
-    <div class=" col-md-2 verl-align"> <%=product.product_type%></div>
-    <div class="col-xs-2">
+<div class="row" id="<%= "show-#{cocktail.id}" %>">
+  <div class=" col-md-2 verl-align"></div>
+  <div class=" col-md-1 verl-align"> <%=cocktail.name%></div>
+  <div class=" col-md-2 verl-align"> <%=cocktail.description%></div>
+  <div class=" col-md-1 verl-align"> <%=cocktail.value%></div>
+  <div class=" col-md-1 verl-align"> <%=cocktail.price%></div>
 
-     <%= link_to edit_admin_ajax_product_path(product), remote: true , class: "btn bnt-default" do %>
-     <span class="glyphicon glyphicon-pencil" aria-hiden="true"> </span>
+  <div class="col-md-2">
+    <div class="btn btn-info col-sm-3 "  type="button" >
+      <%= link_to  'edit', edit_admin_cocktail_path(cocktail) %>
+    </div >
+
+    <div class="btn btn-info col-sm-3"  type="button" >
+      <%= link_to 'remove', admin_cocktail_path(cocktail), method: :delete %>
+    </div >
+
+
+    <%if cocktail.visible == "show" %>
+
+        <%= link_to admin_ajax_cocktail_path(cocktail.id , cocktail: {visible: "hide"}), method: :put, remote: true , class: "btn bnt-default" do %>
+        <span > <%=cocktail.visible%> </span>
+        <%end%>
+
+     <% else %>
+
+      <%= link_to admin_ajax_cocktail_path(cocktail.id, cocktail: {visible: "show"}), method: :put, remote: true , class: "btn bnt-default" do %>
+                <span > <%=cocktail.visible%> </span>
+        <%end%>
+
      <%end%>
-
-     <%= link_to admin_ajax_product_path(product), method: :delete, remote: true , class: "btn bnt-default" do %>
-     <span class="glyphicon glyphicon-remove"  aria-hidden="true"></span>
-
-      <%end%>
-    </div>
+  </div>
 
 </div>

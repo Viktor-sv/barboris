@@ -1,0 +1,19 @@
+<div id="cocktail">
+  <div class="row">
+    <div class="col-md-1">ID</div>
+    <div class="col-md-1">Image</div>
+    <div class="col-md-1">Cocktail Name</div>
+    <div class="col-md-2">Cocktail Description</div>
+    <div class="col-md-1">Value</div>
+    <div class="col-md-1">Price</div>
+    <div class="col-md-1">Actions</div>
+  </div>
+<HR>
+
+
+  <%@cocktails.each do |cocktail| %>
+
+      <%=render partial: 'cocktail', locals:{cocktail: cocktail} %>
+  <%end%>
+
+</div>

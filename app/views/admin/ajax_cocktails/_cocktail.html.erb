@@ -1,13 +1,9 @@
-<div id="<%= product.id %>" data-id="<%= product.id %>">
+<div id="<%= cocktail.id %>" data-id="<%= cocktail.id %>">
 
 
 
+    <%= render partial: 'row', locals: {cocktail: cocktail} %>
 
-  <%if mode == :show %>
-    <%= render partial: 'row', locals: {product: product} %>
-  <% else %>
-     <%= render partial: 'edit_row', locals: {product: product} %>
-  <%end%>
 
 <hr>
   </div>

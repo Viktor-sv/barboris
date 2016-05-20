@@ -28,7 +28,7 @@ class Admin::AjaxProductsController < ApplicationController
   def update
     puts"index"
     respond_to do |format|
-    if @product.update_attributes item_parms
+    if @product.update_attributes item_params
       format.html{ redirect_to admin_ajax_product_path(@product), notice: 'Product'}
       format.json{ head :no_content}
       else
