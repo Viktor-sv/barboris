@@ -17,14 +17,16 @@
 
     <%if cocktail.visible == "show" %>
 
-        <%= link_to admin_ajax_cocktail_path(cocktail.id , cocktail: {visible: "hide"}), method: :put, remote: true , class: "btn bnt-default" do %>
+        <%= link_to admin_ajax_cocktail_path(cocktail.id,  cocktail: {visible: "hide"}), method: :put, remote: true , class: "btn bnt-default" do %>
         <span > <%=cocktail.visible%> </span>
+
         <%end%>
 
      <% else %>
 
-      <%= link_to admin_ajax_cocktail_path(cocktail.id, cocktail: {visible: "show"}), method: :put, remote: true , class: "btn bnt-default" do %>
+      <%= link_to admin_ajax_cocktail_path(cocktail.id, cocktail: {visible: "show"}), method: :put,   remote: true , class: "btn bnt-default" do %>
                 <span > <%=cocktail.visible%> </span>
+
         <%end%>
 
      <%end%>

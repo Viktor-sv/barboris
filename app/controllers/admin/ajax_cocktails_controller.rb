@@ -11,16 +11,24 @@ class Admin::AjaxCocktailsController < ApplicationController
 
 def show
   puts"show"
+
 end
 
   def update
     puts"update"
+
     respond_to do |format|
       if @cocktail.update_attributes item_params
-        format.html{ redirect_to action: :index}
+
+        puts"@cocktail.update_attributes item_params"
+
+        #format.html{ redirect_to action: :index }
+        format.html{ redirect_to admin_ajax_cocktail_path(@cocktail)}
+        format.js {}
         format.json{ head :no_content}
       else
-        format.html{ reder action: :edit}
+        puts"format.html{ reder action: :edit}"
+        format.html{ render action: :edit}
         format.json{ render_to json: @cocktail.errors, status: :unprocessable_entity}
       end
 
@@ -35,9 +43,9 @@ end
 
 
   def item_params
-    puts params
-    params.require(:cocktail).permit(:id, :name, :description, :image, :visible, ingredients_attributes: [:id, :value, :product_id, :cocktail_id])
-
+   puts params
+   params.fetch(:cocktail, {}).permit(:id, :name, :description, :image, :visible, ingredients_attributes: [:id, :value, :product_id, :cocktail_id])
+   #params.require(:cocktail).permit(:id, :name, :description, :image, :visible, ingredients_attributes: [:id, :value, :product_id, :cocktail_id])
   end
 
 

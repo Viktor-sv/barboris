@@ -7,7 +7,9 @@
 
   <div class="row">
     <% @cocktails.each do |cocktail|  %>
+      <%  if cocktail.visible == "show" %>
         <%=  render partial: 'welcome/item', locals:{f: cocktail} %>
+      <%end%>
     <%end%>
   </div>
   <hr>
